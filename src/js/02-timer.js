@@ -38,10 +38,10 @@ return;
   const startBtnIntervalId = setInterval(() => {
     const datesDifference = userDate - Date.now();
     const { days, hours, minutes, seconds } = convertMs(datesDifference);
-    daysEl.textContent = days;
-    hoursEl.textContent = hours;
-    minutesEl.textContent = minutes;
-    secsEl.textContent = seconds;
+    daysEl.textContent = days.toString().padStart(2,'0');
+    hoursEl.textContent = hours.toString().padStart(2, '0');
+    minutesEl.textContent = minutes.toString().padStart(2, '0');
+    secsEl.textContent = seconds.toString().padStart(2, '0');
     startBtnEl.disabled = true;
     if (datesDifference < 1000) {
       clearInterval(startBtnIntervalId);
